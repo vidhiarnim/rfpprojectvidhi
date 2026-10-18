@@ -1,0 +1,815 @@
+{
+  "rfp_run_id": "RFP-20261018-092805-2CDD86",
+  "created_at": "2026-10-18T09:28:05+00:00",
+  "status": "COMPLETED",
+  "app_version": "1.0.0",
+  "llm": {
+    "provider": "offline-demo",
+    "model": "keyword-heuristic-v1",
+    "temperature": 0
+  },
+  "criteria": [
+    {
+      "criterion_id": 1,
+      "name": "Technical Capability",
+      "description": "Architecture, integrations, scalability, technical fit",
+      "weight": 30.0,
+      "max_score": 10.0
+    },
+    {
+      "criterion_id": 2,
+      "name": "Implementation Plan",
+      "description": "Timeline, milestones, staffing, risk plan",
+      "weight": 20.0,
+      "max_score": 10.0
+    },
+    {
+      "criterion_id": 3,
+      "name": "Commercial Value",
+      "description": "Pricing clarity, total cost, assumptions",
+      "weight": 20.0,
+      "max_score": 10.0
+    },
+    {
+      "criterion_id": 4,
+      "name": "Security & Compliance",
+      "description": "Controls, certifications, privacy, auditability",
+      "weight": 20.0,
+      "max_score": 10.0
+    },
+    {
+      "criterion_id": 5,
+      "name": "Support & Experience",
+      "description": "Support model, similar projects, references",
+      "weight": 10.0,
+      "max_score": 10.0
+    }
+  ],
+  "formulas": {
+    "absolute_score": "sum((score / max_score) * weight)",
+    "benchmark": "max(score) for the criterion across all suppliers in the run",
+    "gap": "score - benchmark",
+    "relative_pct": "score / benchmark * 100 (0 when benchmark is 0)",
+    "ppi": "sum(relative_pct * weight) / sum(weight)"
+  },
+  "tie_break_rules": [
+    "1) Higher Peer Performance Index (PPI) ranks first",
+    "2) If PPI is tied, the earlier submission date ranks first",
+    "3) If still tied, the higher historical experience rating ranks first",
+    "4) If still tied, supplier name in ascending (A-Z) order"
+  ],
+  "ties_resolved": [],
+  "benchmarks": [
+    {
+      "criterion_id": 1,
+      "name": "Technical Capability",
+      "benchmark_score": 10.0,
+      "max_score": 10.0,
+      "leaders": [
+        "Apex Systems"
+      ],
+      "benchmark_zero": false
+    },
+    {
+      "criterion_id": 2,
+      "name": "Implementation Plan",
+      "benchmark_score": 10.0,
+      "max_score": 10.0,
+      "leaders": [
+        "Apex Systems",
+        "NexaWorks"
+      ],
+      "benchmark_zero": false
+    },
+    {
+      "criterion_id": 3,
+      "name": "Commercial Value",
+      "benchmark_score": 10.0,
+      "max_score": 10.0,
+      "leaders": [
+        "NexaWorks"
+      ],
+      "benchmark_zero": false
+    },
+    {
+      "criterion_id": 4,
+      "name": "Security & Compliance",
+      "benchmark_score": 10.0,
+      "max_score": 10.0,
+      "leaders": [
+        "Apex Systems",
+        "NexaWorks"
+      ],
+      "benchmark_zero": false
+    },
+    {
+      "criterion_id": 5,
+      "name": "Support & Experience",
+      "benchmark_score": 10.0,
+      "max_score": 10.0,
+      "leaders": [
+        "NexaWorks"
+      ],
+      "benchmark_zero": false
+    }
+  ],
+  "suppliers": [
+    {
+      "final_rank": 1,
+      "supplier_name": "Apex Systems",
+      "submission_date": "2026-09-22",
+      "experience_rating": 4.0,
+      "absolute_score": 92.0,
+      "ppi": 92.0,
+      "ppi_sort_value": 92.0,
+      "tie_break_explanation": "Ranked 1st; above NexaWorks: Rule 1 - higher PPI (92.00 vs 91.00).",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 30.0,
+          "max_score": 10.0,
+          "score": 10.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 30.0,
+          "is_benchmark_leader": true,
+          "justification": "Document addresses 17 of the expected indicators (e.g. api, architecture, concurrent, connector).",
+          "evidence": "- SAP S/4HANA integration: certified SAP BTP connector using OData v4 for order lookup, returns and",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 10.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 20.0,
+          "is_benchmark_leader": true,
+          "justification": "Document addresses 15 of the expected indicators (e.g. critical-path, cutover, fte, go-live).",
+          "evidence": "Production cutover, 4-week hypercare",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 7.0,
+          "benchmark": 10.0,
+          "gap": -3.0,
+          "relative_pct": 70.0,
+          "weighted_points": 14.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 9 of the expected indicators (e.g. assumptions, exclude gst, fixed price, no markup). Concerns: estimate, on request.",
+          "evidence": "Assumptions: prices exclude GST;",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 10.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 20.0,
+          "is_benchmark_leader": true,
+          "justification": "Document addresses 18 of the expected indicators (e.g. 27001, 27701, aes-256, audit log).",
+          "evidence": "encryption AES-256 at rest, TLS 1.3 in transit;",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "benchmark": 10.0,
+          "gap": -2.0,
+          "relative_pct": 80.0,
+          "weighted_points": 8.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 10 of the expected indicators (e.g. 24x7, account manager, hypercare, live). Concerns: on request after.",
+          "evidence": "99.95% monthly uptime SLA with service credits.",
+          "imputed": false,
+          "evidence_missing": false
+        }
+      ],
+      "risks": [
+        "Commercial Value: proposal contains 'estimate'.",
+        "Support & Experience: proposal contains 'on request after'."
+      ],
+      "overall_summary": "Offline keyword evaluation of Apex Systems: average criterion coverage 90%. Replace with a real LLM provider for qualitative judgement.",
+      "validation_warnings": [],
+      "llm_output_valid_json": true,
+      "llm_call": {
+        "attempts": 1,
+        "repaired": false,
+        "elapsed_s": 0.0,
+        "raw_reply_chars": 1577
+      },
+      "source_document": {
+        "file_name": "01_Apex_Systems_Proposal.pdf",
+        "pages": 2,
+        "chars": 5467,
+        "sha256": "947d64481a6e684556c13714d323b987aee27b35ebf2aeb146b8539a1c7c610b",
+        "truncated": false
+      }
+    },
+    {
+      "final_rank": 2,
+      "supplier_name": "NexaWorks",
+      "submission_date": "2026-09-22",
+      "experience_rating": 4.0,
+      "absolute_score": 91.0,
+      "ppi": 91.0,
+      "ppi_sort_value": 91.0,
+      "tie_break_explanation": "Ranked 2; below Apex Systems: Rule 1 - higher PPI (92.00 vs 91.00).",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 30.0,
+          "max_score": 10.0,
+          "score": 7.0,
+          "benchmark": 10.0,
+          "gap": -3.0,
+          "relative_pct": 70.0,
+          "weighted_points": 21.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 11 of the expected indicators (e.g. api, capacity, concurrent, data resident).",
+          "evidence": "- Channels: email, web chat, WhatsApp, voice callback (native CPaaS integration).",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 10.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 20.0,
+          "is_benchmark_leader": true,
+          "justification": "Document addresses 18 of the expected indicators (e.g. contingency, exit criteria, fte, go-live).",
+          "evidence": "P6 Phased go-live (3 waves)",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 10.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 20.0,
+          "is_benchmark_leader": true,
+          "justification": "Document addresses 10 of the expected indicators (e.g. assumptions, excludes gst, fixed price, milestone-linked).",
+          "evidence": "Assumptions: excludes GST;",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 10.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 20.0,
+          "is_benchmark_leader": true,
+          "justification": "Document addresses 14 of the expected indicators (e.g. 27001, aes-256, audit log, breach).",
+          "evidence": "- AES-256 encryption at rest, TLS 1.2+ in transit;",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 10.0,
+          "benchmark": 10.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weighted_points": 10.0,
+          "is_benchmark_leader": true,
+          "justification": "Document addresses 14 of the expected indicators (e.g. 24x7, annex c, customer success, deployments).",
+          "evidence": "99.9% uptime SLA with service credits;",
+          "imputed": false,
+          "evidence_missing": false
+        }
+      ],
+      "risks": [
+        "No explicit gaps detected by keyword scan."
+      ],
+      "overall_summary": "Offline keyword evaluation of NexaWorks: average criterion coverage 94%. Replace with a real LLM provider for qualitative judgement.",
+      "validation_warnings": [],
+      "llm_output_valid_json": true,
+      "llm_call": {
+        "attempts": 1,
+        "repaired": false,
+        "elapsed_s": 0.0,
+        "raw_reply_chars": 1425
+      },
+      "source_document": {
+        "file_name": "03_NexaWorks_Proposal.pdf",
+        "pages": 2,
+        "chars": 5160,
+        "sha256": "a19dbf85b13d79262ed19c1533b4365934a1a7364363aad29d938a56872195a6",
+        "truncated": false
+      }
+    },
+    {
+      "final_rank": 3,
+      "supplier_name": "Orbit Digital",
+      "submission_date": "2026-09-20",
+      "experience_rating": 5.0,
+      "absolute_score": 33.0,
+      "ppi": 33.0,
+      "ppi_sort_value": 33.0,
+      "tie_break_explanation": "Ranked 3; below NexaWorks: Rule 1 - higher PPI (91.00 vs 33.00).",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 30.0,
+          "max_score": 10.0,
+          "score": 3.0,
+          "benchmark": 10.0,
+          "gap": -7.0,
+          "relative_pct": 30.0,
+          "weighted_points": 9.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 8 of the expected indicators (e.g. api, architecture, integration, salesforce). Concerns: after discovery, to be confirmed, will be designed.",
+          "evidence": "covering email, web chat, WhatsApp and voice callback.",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 3.0,
+          "benchmark": 10.0,
+          "gap": -7.0,
+          "relative_pct": 30.0,
+          "weighted_points": 6.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 6 of the expected indicators (e.g. fte, go-live, phase, risk). Concerns: could extend, indicative, to be confirmed.",
+          "evidence": "Security, Compliance and Risk",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 2.0,
+          "benchmark": 10.0,
+          "gap": -8.0,
+          "relative_pct": 20.0,
+          "weighted_points": 4.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 5 of the expected indicators (e.g. assumptions, excludes gst, per agent, total year 1). Concerns: estimate, indicative, may change.",
+          "evidence": "Assumptions: excludes GST and travel;",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 3.0,
+          "benchmark": 10.0,
+          "gap": -7.0,
+          "relative_pct": 30.0,
+          "weighted_points": 6.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 6 of the expected indicators (e.g. 27001, dpdp, encryption, penetration). Concerns: 2013, in progress, under way.",
+          "evidence": "- Annual penetration testing;",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 8.0,
+          "benchmark": 10.0,
+          "gap": -2.0,
+          "relative_pct": 80.0,
+          "weighted_points": 8.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 10 of the expected indicators (e.g. 24x7, account manager, csat, live). Concerns: business hours.",
+          "evidence": "- Swift Telecom (fictional) - 900 agents, live since 2022;",
+          "imputed": false,
+          "evidence_missing": false
+        }
+      ],
+      "risks": [
+        "Technical Capability: proposal contains 'after discovery'.",
+        "Implementation Plan: proposal contains 'could extend'.",
+        "Commercial Value: proposal contains 'estimate'.",
+        "Security & Compliance: proposal contains '2013'.",
+        "Support & Experience: proposal contains 'business hours'."
+      ],
+      "overall_summary": "Offline keyword evaluation of Orbit Digital: average criterion coverage 38%. Replace with a real LLM provider for qualitative judgement.",
+      "validation_warnings": [],
+      "llm_output_valid_json": true,
+      "llm_call": {
+        "attempts": 1,
+        "repaired": false,
+        "elapsed_s": 0.0,
+        "raw_reply_chars": 1846
+      },
+      "source_document": {
+        "file_name": "04_Orbit_Digital_Proposal.pdf",
+        "pages": 2,
+        "chars": 4364,
+        "sha256": "fcb300ee9792838920e2b9c20baa239d49c51b8037d97c62c2cba03fc1c1e035",
+        "truncated": false
+      }
+    },
+    {
+      "final_rank": 4,
+      "supplier_name": "BrightPath Tech",
+      "submission_date": "2026-09-25",
+      "experience_rating": 2.0,
+      "absolute_score": 23.0,
+      "ppi": 23.0,
+      "ppi_sort_value": 23.0,
+      "tie_break_explanation": "Ranked 4; below Orbit Digital: Rule 1 - higher PPI (33.00 vs 23.00).",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 30.0,
+          "max_score": 10.0,
+          "score": 1.0,
+          "benchmark": 10.0,
+          "gap": -9.0,
+          "relative_pct": 10.0,
+          "weighted_points": 3.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 6 of the expected indicators (e.g. api, integration, salesforce, sap s/4hana). Concerns: after discovery, hundreds of agents, manually.",
+          "evidence": "- SAP S/4HANA: we will build a custom REST integration during the project.",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 4.0,
+          "benchmark": 10.0,
+          "gap": -6.0,
+          "relative_pct": 40.0,
+          "weighted_points": 8.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 7 of the expected indicators (e.g. cutover, fte, go-live, migration). Concerns: not included, to be confirmed.",
+          "evidence": "Risks: tight timeline depends on fast decisions from Meridian;",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 4.0,
+          "benchmark": 10.0,
+          "gap": -6.0,
+          "relative_pct": 40.0,
+          "weighted_points": 8.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 6 of the expected indicators (e.g. assumptions, exclude gst, fixed price, per agent). Concerns: change requests, subject to revision, to be confirmed.",
+          "evidence": "Assumptions: prices exclude GST;",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 1.0,
+          "benchmark": 10.0,
+          "gap": -9.0,
+          "relative_pct": 10.0,
+          "weighted_points": 2.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 2 of the expected indicators (e.g. 27001, dpdp). Concerns: as they are clarified, planning to begin, region selection to be confirmed.",
+          "evidence": "We will cooperate with Meridian on DPDP",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 2.0,
+          "benchmark": 10.0,
+          "gap": -8.0,
+          "relative_pct": 20.0,
+          "weighted_points": 2.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 4 of the expected indicators (e.g. live, reference, response, uptime). Concerns: 9 am, business hours, first deployment.",
+          "evidence": "Target first response for critical",
+          "imputed": false,
+          "evidence_missing": false
+        }
+      ],
+      "risks": [
+        "Technical Capability: proposal contains 'after discovery'.",
+        "Implementation Plan: proposal contains 'not included'.",
+        "Commercial Value: proposal contains 'change requests'.",
+        "Security & Compliance: proposal contains 'as they are clarified'.",
+        "Support & Experience: proposal contains '9 am'."
+      ],
+      "overall_summary": "Offline keyword evaluation of BrightPath Tech: average criterion coverage 24%. Replace with a real LLM provider for qualitative judgement.",
+      "validation_warnings": [],
+      "llm_output_valid_json": true,
+      "llm_call": {
+        "attempts": 1,
+        "repaired": false,
+        "elapsed_s": 0.0,
+        "raw_reply_chars": 1950
+      },
+      "source_document": {
+        "file_name": "02_BrightPath_Tech_Proposal.pdf",
+        "pages": 2,
+        "chars": 3266,
+        "sha256": "12fab88b8d71ce99de4b43abfe657254d8bad6676f54b791a38ad67ad66b83f4",
+        "truncated": false
+      }
+    },
+    {
+      "final_rank": 5,
+      "supplier_name": "Zenith CloudWorks",
+      "submission_date": "2026-09-25",
+      "experience_rating": 1.0,
+      "absolute_score": 9.0,
+      "ppi": 9.0,
+      "ppi_sort_value": 9.0,
+      "tie_break_explanation": "Ranked 5; below BrightPath Tech: Rule 1 - higher PPI (23.00 vs 9.00).",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "name": "Technical Capability",
+          "weight": 30.0,
+          "max_score": 10.0,
+          "score": 2.0,
+          "benchmark": 10.0,
+          "gap": -8.0,
+          "relative_pct": 20.0,
+          "weighted_points": 6.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 3 of the expected indicators (e.g. api, voice, whatsapp). Concerns: not part of.",
+          "evidence": "- Can connect to any system through APIs.",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 2,
+          "name": "Implementation Plan",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 1.0,
+          "benchmark": 10.0,
+          "gap": -9.0,
+          "relative_pct": 10.0,
+          "weighted_points": 2.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 1 of the expected indicators (e.g. fte). Concerns: exact timeline, proof of concept, will be shared.",
+          "evidence": "Pricing is usage-based and will be shared on request after understanding Meridian's monthly conversation",
+          "imputed": false,
+          "evidence_missing": false
+        },
+        {
+          "criterion_id": 3,
+          "name": "Commercial Value",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 0.0,
+          "benchmark": 10.0,
+          "gap": -10.0,
+          "relative_pct": 0.0,
+          "weighted_points": 0.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 0 of the expected indicators. Concerns: on request, usage-based.",
+          "evidence": "",
+          "imputed": false,
+          "evidence_missing": true
+        },
+        {
+          "criterion_id": 4,
+          "name": "Security & Compliance",
+          "weight": 20.0,
+          "max_score": 10.0,
+          "score": 0.0,
+          "benchmark": 10.0,
+          "gap": -10.0,
+          "relative_pct": 0.0,
+          "weighted_points": 0.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 0 of the expected indicators. Concerns: secure cloud infrastructure.",
+          "evidence": "",
+          "imputed": false,
+          "evidence_missing": true
+        },
+        {
+          "criterion_id": 5,
+          "name": "Support & Experience",
+          "weight": 10.0,
+          "max_score": 10.0,
+          "score": 1.0,
+          "benchmark": 10.0,
+          "gap": -9.0,
+          "relative_pct": 10.0,
+          "weighted_points": 1.0,
+          "is_benchmark_leader": false,
+          "justification": "Document addresses 1 of the expected indicators (e.g. response). Concerns: cannot be disclosed, founded in 2025, on request after.",
+          "evidence": "Proposal in response to MRG-RFP-2026-014: Omnichannel Customer Service & Ticketing Platform",
+          "imputed": false,
+          "evidence_missing": false
+        }
+      ],
+      "risks": [
+        "Technical Capability: proposal contains 'not part of'.",
+        "Implementation Plan: proposal contains 'exact timeline'.",
+        "Commercial Value: proposal contains 'on request'.",
+        "Security & Compliance: proposal contains 'secure cloud infrastructure'.",
+        "Support & Experience: proposal contains 'cannot be disclosed'."
+      ],
+      "overall_summary": "Offline keyword evaluation of Zenith CloudWorks: average criterion coverage 8%. Replace with a real LLM provider for qualitative judgement.",
+      "validation_warnings": [
+        "V9: criterion 3 (Commercial Value) has no supporting evidence quote.",
+        "V9: criterion 4 (Security & Compliance) has no supporting evidence quote."
+      ],
+      "llm_output_valid_json": true,
+      "llm_call": {
+        "attempts": 1,
+        "repaired": false,
+        "elapsed_s": 0.0,
+        "raw_reply_chars": 1736
+      },
+      "source_document": {
+        "file_name": "05_Zenith_CloudWorks_Proposal.pdf",
+        "pages": 1,
+        "chars": 1860,
+        "sha256": "1d70f95c493098f246d6be5c09ec041479a6fa96dd562a535792edb218ebef03",
+        "truncated": false
+      }
+    }
+  ],
+  "warnings": [
+    "Zenith CloudWorks: V9: criterion 3 (Commercial Value) has no supporting evidence quote.",
+    "Zenith CloudWorks: V9: criterion 4 (Security & Compliance) has no supporting evidence quote."
+  ],
+  "trace": [
+    {
+      "step": "2 Input",
+      "tool": "Document Tool",
+      "detail": "01_Apex_Systems_Proposal.pdf: 2 pages, 5467 chars via pymupdf",
+      "at": "2026-10-18T09:28:05+00:00",
+      "seconds": 0.08
+    },
+    {
+      "step": "2 Input",
+      "tool": "Document Tool",
+      "detail": "02_BrightPath_Tech_Proposal.pdf: 2 pages, 3266 chars via pymupdf",
+      "at": "2026-10-18T09:28:05+00:00",
+      "seconds": 0.0
+    },
+    {
+      "step": "2 Input",
+      "tool": "Document Tool",
+      "detail": "03_NexaWorks_Proposal.pdf: 2 pages, 5160 chars via pymupdf",
+      "at": "2026-10-18T09:28:05+00:00",
+      "seconds": 0.0
+    },
+    {
+      "step": "2 Input",
+      "tool": "Document Tool",
+      "detail": "04_Orbit_Digital_Proposal.pdf: 2 pages, 4364 chars via pymupdf",
+      "at": "2026-10-18T09:28:05+00:00",
+      "seconds": 0.0
+    },
+    {
+      "step": "2 Input",
+      "tool": "Document Tool",
+      "detail": "05_Zenith_CloudWorks_Proposal.pdf: 1 pages, 1860 chars via pymupdf",
+      "at": "2026-10-18T09:28:05+00:00",
+      "seconds": 0.0
+    },
+    {
+      "step": "3 Batch",
+      "tool": "Orchestrator",
+      "detail": "Created RFP-20261018-092805-2CDD86 with 5 supplier entries",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "4 Evaluate",
+      "tool": "SQLite",
+      "detail": "Reloaded 5 active criteria (Technical Capability 30%, Implementation Plan 20%, Commercial Value 20%, Security & Compliance 20%, Support & Experience 10%)",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "4 Evaluate",
+      "tool": "Evaluation Agent",
+      "detail": "Apex Systems: 1 call(s), 0.0s",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "5 Validate",
+      "tool": "Validation Tool",
+      "detail": "Apex Systems: 0 warning(s)",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "4 Evaluate",
+      "tool": "Evaluation Agent",
+      "detail": "BrightPath Tech: 1 call(s), 0.0s",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "5 Validate",
+      "tool": "Validation Tool",
+      "detail": "BrightPath Tech: 0 warning(s)",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "4 Evaluate",
+      "tool": "Evaluation Agent",
+      "detail": "NexaWorks: 1 call(s), 0.0s",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "5 Validate",
+      "tool": "Validation Tool",
+      "detail": "NexaWorks: 0 warning(s)",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "4 Evaluate",
+      "tool": "Evaluation Agent",
+      "detail": "Orbit Digital: 1 call(s), 0.0s",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "5 Validate",
+      "tool": "Validation Tool",
+      "detail": "Orbit Digital: 0 warning(s)",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "4 Evaluate",
+      "tool": "Evaluation Agent",
+      "detail": "Zenith CloudWorks: 1 call(s), 0.0s",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "5 Validate",
+      "tool": "Validation Tool",
+      "detail": "Zenith CloudWorks: 2 warning(s)",
+      "at": "2026-10-18T09:28:05+00:00"
+    },
+    {
+      "step": "6-8 Score/Benchmark/Rank",
+      "tool": "Ranking Tool",
+      "detail": "Ranked 5 suppliers; 0 PPI tie(s) resolved",
+      "at": "2026-10-18T09:28:05+00:00",
+      "seconds": 0.0
+    },
+    {
+      "step": "9 Persist",
+      "tool": "SQLite",
+      "detail": "Saved 5 supplier results and run JSON for RFP-20261018-092805-2CDD86",
+      "at": "2026-10-18T09:28:05+00:00"
+    }
+  ]
+}
